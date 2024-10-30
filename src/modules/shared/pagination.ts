@@ -29,7 +29,7 @@ function urlWithoutQueryParameters(request: Request): string {
 }
 
 export function getPage(pageNum?: number, shard?: number): Page {
-  return { num: pageNum ? pageNum : FIRST_PAGE, size: PAGE_SIZE, shard };
+  return { num: typeof pageNum !== 'undefined' ? pageNum : FIRST_PAGE, size: PAGE_SIZE, shard };
 }
 
 export function nextLink(parameters: {
